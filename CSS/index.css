@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    color: #1b1919;
+}
+
+.mainSection {
+    width: 100%;
+    min-height: 80vh;
+    margin-top: 100px;
+    padding-bottom: 8%;
+}
+
+.slick-slide {
+    width: 100%;
+    margin: 0 80px;
+}
+
+.slick-dots {
+    list-style-type: none;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.slick-dots li {
+    display: inline-block;
+}
+
+.slick-dots button {
+    display: inline-block;
+    font-size: 0px;
+    color: #ccc;
+    background-color: #ccc;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 0;
+    margin-left: 6px;
+    margin-right: 6px;
+    outline: none;
+    cursor: pointer;
+}
+
+.slick-active button {
+    background-color: #aaa;
+}
+
+
+/* Products Section Design  */
+#clothing,
+#accessory {
+    padding: 4% 8% 0;
+}
+
+.heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    font-style: normal;
+    color: #1b1919;
+}
+
+.productPadding {
+    padding: 4% 8% 0;
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.boxStyle {
+    width: 100%;
+    max-width: 19%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* .boxStyle:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+} */
+
+.boxStyle img {
+    width: 100%;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.details {
+    padding-left: 10px;
+    margin: 10px auto;
+    text-align: left;
+}
+
+.details h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.details h4 {
+    margin: 10px 0px 0px;
+    padding: 0;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 12px;
+    color: #6e6e6e;
+}
+
+.details h5 {
+    margin: 10px 0px 0px;
+    padding: 0;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 15px;
+    color: #009688;
+    letter-spacing: 2px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    body {
+        margin: 10px !important;
+        padding: 0px !important;
+    }
+
+    .cardContainer {
+        padding: 0 1%;
+    }
+
+    .boxStyle {
+        min-width: 150px;
+        margin: 30px 8px;
+    }
+
+    .boxStyle img {
+        height: 220px;
+    }
+
+    .details {
+        margin: 10px 0px;
+        padding: 0px 0px 0px 10px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    body {
+        margin: 15px !important;
+        padding: 10px !important;
+    }
+
+    .cardContainer {
+        padding: 0 2%;
+    }
+
+    .boxStyle {
+        min-width: 180px;
+        margin: 30px 10px;
+    }
+
+    .boxStyle img {
+        height: 260px;
+    }
+}
