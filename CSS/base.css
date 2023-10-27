@@ -95,6 +95,9 @@ body {
     font-size: 12px;
     margin: 0;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 600;
     border-radius: 50%;
     color: #fff;
@@ -148,6 +151,12 @@ footer>div {
     opacity: 0.8;
 }
 
-.pdl0{
+.pdl0 {
     padding-left: 0px;
 }
+
+/* Responsive footer Design */
+
+@media screen and (min-width: 320px) and (max-width: 480px) {}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {}  
