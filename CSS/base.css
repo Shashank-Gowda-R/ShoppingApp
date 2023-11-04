@@ -109,10 +109,18 @@ body {
     color: #000;
 }
 
+.togglebar {
+    display: none;
+}
+
 .rightMenu img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+}
+
+.display {
+    display: block;
 }
 
 /* Footer Deign */
@@ -120,13 +128,19 @@ body {
 footer {
     width: 100%;
     background-color: #1c1b1e;
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
     box-sizing: border-box;
-    padding: 4% 8%;
+    padding: 4% 6%;
 }
 
-footer>div {
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footerDiv {
+    width: 15%;
     padding-left: 60px;
     padding-right: 60px;
 }
@@ -157,6 +171,51 @@ footer>div {
 
 /* Responsive footer Design */
 
-@media screen and (min-width: 320px) and (max-width: 480px) {}
+@media(max-width: 1024px) {
+    .footerDiv {
+        width: 35%;
+        margin-bottom: 30px;
+        padding-left: 0px !important;
+        align-self: center;
+        margin: 0 auto;
+    }
+}
 
-@media screen and (min-width: 481px) and (max-width: 768px) {}  
+@media(max-width: 574px) {
+    .footerDiv {
+        width: 100%;
+        padding-left: 0px;
+    }
+}
+
+/* Responsive Header Design */
+
+@media screen and (max-width:912px) {
+    .leftMenu a:not(:first-child) {
+        display: none;
+    }
+
+    .searchBar {
+        display: none;
+    }
+
+    .cartIcon{
+        margin-left: 40px;
+        margin-right: -10px;
+        align-items: center;
+    }
+    #cart-count {
+        top: -10px;
+        right: -20px;
+    }
+
+    .rightMenu .cartIcon {
+        display: block;
+    }
+}
+
+@media screen and (max-width:1240px){
+    .searchBar input{
+        width: 70%;
+    }
+}

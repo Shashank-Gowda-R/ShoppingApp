@@ -1,43 +1,53 @@
 var loadData = () => {
     var productData = JSON.parse(localStorage.getItem('selectedProduct'));
+
     var productImage = document.createElement('div');
-    productImage.className = 'previewImg';
+    productImage.className = 'productImage';
+    var imgContainer = document.createElement('div');
+    imgContainer.className = 'imgContainer';
     var displayImg = document.createElement('img');
     displayImg.src = productData.preview;
-    productImage.appendChild(displayImg);
-    console.log(productImage);
+    imgContainer.appendChild(displayImg);
+    productImage.appendChild(imgContainer);
 
     var productDetails = document.createElement('div');
     productDetails.className = 'productDetails';
+
     var pheading = document.createElement('h1');
     pheading.innerHTML = productData.name;
     productDetails.appendChild(pheading);
 
-    var brandTag = document.createElement('h4');
+    var brandTag = document.createElement('h1');
     brandTag.innerHTML = productData.brand;
     brandTag.className = 'brand';
     productDetails.appendChild(brandTag)
 
-    var price = document.createElement('h3');
-    price.innerHTML = "Price: Rs "
+    var price = document.createElement('h4');
+    price.innerHTML = "Price: Rs ";
+    price.className = 'price';
 
-    var priceTag = document.createElement('span');
+    var priceTag = document.createElement('p');
     priceTag.innerHTML = productData.price;
+    priceTag.className = 'priceTag'
     price.appendChild(priceTag);
 
     productDetails.appendChild(price);
 
-    var desc = document.createElement('h3');
+    var desc = document.createElement('h4');
     desc.innerHTML = 'Description';
+    desc.className = 'descHeading';
+    productDetails.appendChild(desc);
 
     var descData = document.createElement('p');
     descData.innerHTML = productData.description;
-    desc.appendChild(descData);
+    descData.className = 'description';
+    productDetails.appendChild(descData);
 
-    productDetails.appendChild(desc);
 
-    var imgHead = document.createElement('h3');
+
+    var imgHead = document.createElement('h4');
     imgHead.innerHTML = 'Product Preview';
+    imgHead.className = 'descHeading';
     productDetails.appendChild(imgHead);
 
     var smallPreviewImg = document.createElement('div');
@@ -65,7 +75,16 @@ var loadData = () => {
     var addBtn = document.createElement('button');
     addBtn.innerHTML = 'Add to Cart';
     addBtn.className = 'button';
-    addBtn.onclick = addItems;
+
+    addBtn.addEventListener('click', function () {
+        addBtn.classList.add('bigger');
+        setTimeout(function () {
+            addBtn.classList.remove('bigger');
+        }, 200)
+        addToCart(productData);
+        var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        document.getElementById('cart-count').innerHTML = cartData.length;
+    });
 
     productDetails.appendChild(addBtn);
 
@@ -75,19 +94,10 @@ var loadData = () => {
     mainDiv.appendChild(productDetails);
 };
 
-var addItems = () => {
-    if (typeof (Storage) !== 'undefined') {
-        if (localStorage.itemsCount) {
-            localStorage.itemsCount = Number(localStorage.itemsCount) + 1;
-        }
-        else {
-            localStorage.itemsCount = 1;
-        }
-        document.getElementById('cart-count').innerHTML = localStorage.itemsCount;
-    }
-    else {
-        document.getElementById('cart-count').innerHTML = localStorage.itemsCount;
-    }
+var addToCart = (productData) => {
+    var cartData = JSON.parse(localStorage.getItem('cart')) || [];
+    cartData.push(productData);
+    localStorage.setItem('cart', JSON.stringify(cartData));
 }
 
 loadData();

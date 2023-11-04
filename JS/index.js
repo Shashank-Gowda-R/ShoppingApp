@@ -14,7 +14,7 @@ $(document).ready(function () {
                     arrows: false,
                     centerMode: true,
                     centerPadding: '40px',
-                    slidesToShow: 3
+                    slidesToShow: 1
                 }
             },
             {
@@ -28,6 +28,7 @@ $(document).ready(function () {
             }
         ]
     });
+
     var APICall = () => {
         var a = new XMLHttpRequest();
         a.open('get', 'https://5d76bf96515d1a0014085cf9.mockapi.io/product', true);
@@ -49,7 +50,6 @@ $(document).ready(function () {
                             imgTag.src = x.preview;
                             imgTag.addEventListener('click', () => {
                                 localStorage.setItem('selectedProduct', JSON.stringify(x));
-                                // window.location.href='productDetails.html';
                             });
                         }
                     }

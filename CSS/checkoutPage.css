@@ -1,0 +1,140 @@
+main {
+    width: 100%;
+    min-height: 80vh;
+    box-sizing: border-box;
+    margin-top: 100px;
+    /* padding: 8%; */
+}
+
+#mainSection {
+    padding: 2% 8%;
+    box-sizing: border-box;
+}
+
+.mainHeading {
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 48px;
+}
+
+.mainContent {
+    display: flex;
+    justify-content: start;
+}
+
+.rightDiv {
+    width: 50%;
+}
+
+.subHeading {
+    font-size: 24px;
+    color: #000000cc;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+.itemDiv {
+    display: flex;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    max-width: 600px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.checkoutProdImg {
+    width: 80px;
+    min-height: 80px;
+    border-radius: 5px;
+    margin-right: 16px;
+}
+
+.itemName {
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: 4px;
+    font-size: 18px;
+}
+
+.itemCount {
+    margin: 0;
+    margin-top: 4px;
+    margin-bottom: 4px; 
+}
+
+.totalAmount {
+    color: #000;
+    opacity: 0.8;
+    font-size: 24px;
+    font-weight: 800;
+    margin-left: 4px;
+}
+
+.leftDiv {
+    width: 50%;
+    height: fit-content;
+    margin-top: 48px;
+    margin-left: 3%;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px #ccc;
+    border-radius: 5px;
+    padding: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.orderBtn {
+    background-color: #009688;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 18px 36px;
+    border-radius: 6px;
+    margin-top: 36px;
+    font-weight: 600;
+    color: #fff;
+}
+
+@media screen and (min-width:280px) and (max-width:767px) {
+    .mainContent {
+        display: block;
+    }
+
+    .rightDiv {
+        width: 100%;
+    }
+
+    .leftDiv {
+        width: 100%;
+        margin-bottom: 20px;
+        margin-left: 0px;
+    }
+    .orderBtn{
+        margin-top: 24px;
+    }
+}
+
+@media screen and (min-width:280px) and (max-width:480px){
+    .itemName{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:280px){
+    .itemDiv{
+        display: block;
+    }
+    .checkoutProdImg{
+        width: 100%;
+    }
+    .detailsDiv{
+        width: 100%;
+    }
+}
